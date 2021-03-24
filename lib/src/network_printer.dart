@@ -233,12 +233,11 @@ class NetworkPrinter {
     bool containsChinese = false,
     int maxCharsPerLine,
   }) {
-    int textB = _socket.write(_generator.text(text,
+    _socket.write(_generator.text(text,
         styles: styles,
         linesAfter: linesAfter,
         containsChinese: containsChinese,
         maxCharsPerLine: maxCharsPerLine));
-    print('textB: $textB');
   }
 
   void setGlobalCodeTable(String codeTable) {
