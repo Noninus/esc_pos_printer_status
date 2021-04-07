@@ -249,16 +249,20 @@ class NetworkPrinter {
         _generator.setGlobalFont(font, maxCharsPerLine: maxCharsPerLine));
   }
 
-  void setStyleTextCentered1() {
-    _socket.write([27, 97, 1]);
+  void setStyleTextLeft() {
+    _socket.write([27, 97, 0]);
   }
 
-  void setStyleTextCentered49() {
+  void setStyleTextCentered() {
     _socket.write([27, 97, 1]);
   }
 
   void setStyleTextRight() {
-    _socket.write([27, 97, 50]);
+    _socket.write([27, 97, 2]);
+  }
+
+  void setStyleTextJustification() {
+    _socket.write([27, 97, 3]);
   }
 
   void setStyles(PosStyles styles, {bool isKanji = false}) {
